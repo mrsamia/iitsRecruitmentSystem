@@ -1,3 +1,10 @@
+ <?php
+ if(!isset($_SESSION['uid'])){
+ 	echo '<script> location.replace("stulogin.php"); </script>';
+ }
+ ?>
+
+
  <!DOCTYPE html>
  <html>
  <head>
@@ -66,7 +73,7 @@
 	            <ul>
 					<li><a href="stu-dash.php">Dashboard</a></li>
 					<li><a href="stu-notice.php">Notice</a></li>
-					<li><a href="stu-notice.php">Work</a></li>
+					<li><a href="work.php">Work</a></li>
 					<h4><a href="stu-logout.php" style="float: right; color:red;">logout<?php echo ' '.$_SESSION['deptid'];?></a></h4>
 				</ul>
 	            <?php
