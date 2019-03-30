@@ -1,9 +1,10 @@
 <style type="text/css">
+
     .pic {
 
         width: 150px;
         height: 150px;
-        border: 3px solid black;
+        border: 3px solid gray;
         padding: 10px;
         margin-left: auto;
         margin-right: auto;
@@ -32,9 +33,14 @@
         <table>
             <tr>
                 <td>Position applied for:</td>
-                <td><select name="position" required>
+                <td><select style="width:250px; border: 1px solid gray;padding: 10px;border-radius:8px;" 
+                    name="position" required>
+                     <option value="President">President</option>
+                    <option value="Vice-President">Vice-President</option>
                     <option value="Manager">Manager</option>
                     <option value="Asst. Manager">Asst. Manager</option>
+                     <option value="Deputi Manager">Deputi Manager</option>
+                      <option value="Assitant">Assitant</option>
                 </select><br><br></td>
             </tr>
 
@@ -61,14 +67,17 @@
 
             <tr>
                 <td>Applied for which wing:</td>
-                <td><select name="wing" required>
-                    <option value="Academic">Academic</option>
+                <td><select style="width:250px; border: 1px solid gray;padding: 10px;border-radius:8px;"
+                 name="wing" required>
                     <option value="Sports">Sports</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Academic">Academic</option>
                     <option value="Mentoring">Mentoring</option>
                     <option value="Programming">Programming</option>
-                    <option value="Academic">Academic</option>
-                    <option value="Academic">Academic</option>
-                    <option value="Academic">Academic</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Relational">Relational</option>
+                     <option value="Publication">Publication</option>
+                    
                 </select><br><br><br></td>
             </tr>
 

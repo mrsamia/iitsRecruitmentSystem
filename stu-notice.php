@@ -1,4 +1,6 @@
-<?php include('header/stu-header.php'); ?>
+<?php 
+session_start();
+include('header/stu-header.php'); ?>
 
 <h1 align="center">Notice</h1>
 <?php

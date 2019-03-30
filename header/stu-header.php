@@ -50,16 +50,39 @@
 	<h3 align="right" style="margin-right:20px;"></h3>
 	<h1><center>IITS Recruitment System</center></h1>
 	<?php
+	include 'dbcon.php';
 	if(isset($_GET['msg'])){
 		echo "<center>".$_GET['msg']."</center>";
 	}
 	?>
+	
+	<?php
+		$id = $_SESSION['deptid'];
+		$sql = "SELECT * FROM `applyform` where `dept-id`='$id' and `selected`=1";
+		$qry = mysqli_query($connection, $sql);
+	    if ($qry) {
+	        if(mysqli_num_rows($qry) > 0){
+	            ?>
+	            <ul>
+					<li><a href="stu-dash.php">Dashboard</a></li>
+					<li><a href="stu-notice.php">Notice</a></li>
+					<li><a href="stu-notice.php">Work</a></li>
+					<h4><a href="stu-logout.php" style="float: right; color:red;">logout<?php echo ' '.$_SESSION['deptid'];?></a></h4>
+				</ul>
+	            <?php
+	        }else{
+	        	?>
+	        	<ul>
+					<li><a href="stu-dash.php">Dashboard</a></li>
+					<li><a href="stu-notice.php">Notice</a></li>
+					<li><a href="view-result.php">View Result</a></li>
+					<li><a href="#stu-pay.php">Pay</a></li>
+					<h4><a href="stu-logout.php" style="float: right; color:red;">logout<?php echo ' '.$_SESSION['deptid'];?></a></h4>
+				</ul>
+	        	<?php
+	        }
+	    }
+	?>
 
-	<ul>
-		<li><a href="stu-dash.php">Dashboard</a></li>
-		<li><a href="stu-notice.php">Notice</a></li>
-		<li><a href="#view-result.php">View Result</a></li>
-		<li><a href="#stu-pay.php">Pay</a></li>
-		<h4><a href="stu-logout.php" style="float: right; color:red;">logout</a></h4>
-		
-	</ul>
+
+	

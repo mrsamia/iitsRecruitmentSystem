@@ -115,8 +115,5 @@
 
             <a href="adminlogin.php">Admin</a>
             <a href="stulogin.php">Student</a>
-
-            <a href="member-login.php">Member</a>
-
         </div>
 </ul>
