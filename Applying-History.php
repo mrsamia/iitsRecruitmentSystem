@@ -66,6 +66,7 @@ $qry = mysqli_query($connection, $sql);
             <td><b>SL</b></td>
             <td><b>Dept-ID</b></td>
             <td><b>Applicant's Name</b></td>
+            <td><b>Position</b></td>
             <td><b>Wing</b></td>
             <td><b>Details</b></td>
         </tr>
@@ -88,6 +89,7 @@ $qry = mysqli_query($connection, $sql);
 
                     <td><?php echo $row["dept-id"]; ?></td>
                     <td><?php echo $row["name"]; ?></td>
+                    <td><?php echo $row["position"]; ?></td>
                     <td><?php echo $row["wing"]; ?></td>
 
                     <td><a href="pdf.php?id=<?php echo $row['ID'] ?>">View Details</a></td>
