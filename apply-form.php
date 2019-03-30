@@ -12,10 +12,13 @@
     }
 </style>
 
+<h1>
+    <center>IITS Recruitment System</center>
+</h1>
+<?php include 'sidebar.php' ?>
 
-<?php include 'header/stu-header.php' ?>
 
-<div class="container">
+<div style="width: 800px; margin: 0 auto" class="container">
 
     <form action="apply-form.php" method="post">
         <h1>
@@ -29,19 +32,31 @@
         <table>
             <tr>
                 <td>Position applied for:</td>
-                <td><input type="text" name="position" required><br><br></td>
+                <td><select name="position" required>
+                    <option value="Academic">Academic</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Mentoring">Mentoring</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Academic">Academic</option>
+                </select><br><br></td>
             </tr>
 
-
+            </tr>
+            <td>ID:</td>
+            <td><input type="text" name="dept-id" required><br><br></td>
+            </tr>
+            </tr>
+            <td>Password:</td>
+            <td><input type="text" name="password" required><br><br></td>
+            </tr>
             <tr>
                 <td>Applicant's Name:</td>
                 <td><input type="text" name="name" required><br><br></td>
             </tr>
 
-            <tr></tr>
-            <td>ID:</td>
-            <td><input type="text" name="dept-id" required><br><br></td>
-            </tr>
+            <tr>
 
             <tr>
                 <td>Program:</td>
@@ -132,14 +147,26 @@ if (isset($_POST['submit'])) {
     $Experience = $_POST['Experience'];
     $chsingpsition = $_POST['choosing-position'];
     $serve = $_POST['serve'];
+    $password = $_POST['password'];
 
-    $sql = "INSERT INTO applyform (`position`,`name`,`dept-id`,`Program`,`wing`,`CGPA`,`Address`,`Contact`,`E-mail`,`Facebook`,`association`,`Experience`,`choosing-position`,`serve`) VALUES('$position','$name','$deptid','$Program','$wing','$CGPA','$Address','$Contact','$Email','$Facebook','$association','$Experience','$chsingpsition','$serve')";
+    echo $position;
+
+    $sql = "SELECT * FROM `applyform` where `dept-id`='$deptid'";
+    $qry = mysqli_query($connection, $sql);
+    if ($qry) {
+        if(mysqli_num_rows($qry) > 0){
+            echo("<script>alert('ID Is Registered')</script>");
+            echo '<script> location.replace("apply-form.php"); </script>';
+        }
+    }
+
+    $sql = "INSERT INTO applyform (`position`,`password`,`name`,`dept-id`,`Program`,`wing`,`CGPA`,`Address`,`Contact`,`E-mail`,`Facebook`,`association`,`Experience`,`choosing-position`,`serve`) VALUES('$position','$password',$name','$deptid','$Program','$wing','$CGPA','$Address','$Contact','$Email','$Facebook','$association','$Experience','$chsingpsition','$serve')";
 
     $qry = mysqli_query($connection, $sql);
     if ($qry) {
 
         echo("<script>alert('Successfully Submitted Result')</script>");
-        header("Location: /INTERNproject/stu-dash.php?msg=Successfully Submitted Result");
+        header("Location: index.php?msg=Successfully Submitted Result");
     } else {
         echo "not insert";
     }

@@ -106,8 +106,7 @@
     <li><a href="#Notice.php">Notice</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
-
-
+    <li><a href="apply-form.php">Apply</a></li>
     <div class="dropdown1">
         <button class="dropbtn1">login
             <i class="fa fa-caret-down"></i>
@@ -118,5 +117,6 @@
             <a href="stulogin.php">Student</a>
 
             <a href="member-login.php">Member</a>
+
         </div>
 </ul>
