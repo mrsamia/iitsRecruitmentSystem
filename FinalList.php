@@ -33,10 +33,10 @@ if (isset($_POST['search'])) {
     if ($val == 'All') {
         $sql = "SELECT * FROM applyform";
     } else {
-        $sql = "SELECT * FROM applyform WHERE wing='$val'";
+        $sql = "SELECT * FROM applyform WHERE wing='$val' and selected=1";
     }
 } else {
-    $sql = "SELECT * FROM applyform";
+    $sql = "SELECT * FROM applyform  where selected=1";
 }
 $qry = mysqli_query($connection, $sql);
 ?>
