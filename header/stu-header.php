@@ -58,7 +58,6 @@
 	<ul>
 		<li><a href="stu-dash.php">Dashboard</a></li>
 		<li><a href="stu-notice.php">Notice</a></li>
-		<li><a class="active" href="apply-form.php">Apply</a></li>
 		<li><a href="#view-result.php">View Result</a></li>
 		<li><a href="#stu-pay.php">Pay</a></li>
 		<h4><a href="stu-logout.php" style="float: right; color:red;">logout</a></h4>
