@@ -33,13 +33,8 @@
             <tr>
                 <td>Position applied for:</td>
                 <td><select name="position" required>
-                    <option value="Academic">Academic</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Mentoring">Mentoring</option>
-                    <option value="Programming">Programming</option>
-                    <option value="Academic">Academic</option>
-                    <option value="Academic">Academic</option>
-                    <option value="Academic">Academic</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Asst. Manager">Asst. Manager</option>
                 </select><br><br></td>
             </tr>
 
@@ -66,7 +61,15 @@
 
             <tr>
                 <td>Applied for which wing:</td>
-                <td><input type="text" name="wing" required><br><br></td>
+                <td><select name="wing" required>
+                    <option value="Academic">Academic</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Mentoring">Mentoring</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Academic">Academic</option>
+                </select><br><br><br></td>
             </tr>
 
             <tr>
@@ -149,7 +152,6 @@ if (isset($_POST['submit'])) {
     $serve = $_POST['serve'];
     $password = $_POST['password'];
 
-    echo $position;
 
     $sql = "SELECT * FROM `applyform` where `dept-id`='$deptid'";
     $qry = mysqli_query($connection, $sql);
@@ -160,15 +162,16 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    $sql = "INSERT INTO applyform (`position`,`password`,`name`,`dept-id`,`Program`,`wing`,`CGPA`,`Address`,`Contact`,`E-mail`,`Facebook`,`association`,`Experience`,`choosing-position`,`serve`) VALUES('$position','$password',$name','$deptid','$Program','$wing','$CGPA','$Address','$Contact','$Email','$Facebook','$association','$Experience','$chsingpsition','$serve')";
+    $sql = "INSERT INTO applyform (`position`,`password`,`name`,`dept-id`,`Program`,`wing`,`CGPA`,`Address`,`Contact`,`E-mail`,`Facebook`,`association`,`Experience`,`choosing-position`,`serve`) VALUES('$position','$password','$name','$deptid','$Program','$wing','$CGPA','$Address','$Contact','$Email','$Facebook','$association','$Experience','$chsingpsition','$serve')";
 
     $qry = mysqli_query($connection, $sql);
     if ($qry) {
 
         echo("<script>alert('Successfully Submitted Result')</script>");
-        header("Location: index.php?msg=Successfully Submitted Result");
+        echo '<script> location.replace("index.php"); </script>';
     } else {
-        echo "not insert";
+        echo("<script>alert('Problem To Insert')</script>");
+        echo '<script> location.replace("apply-form.php"); </script>';
     }
 }
 
