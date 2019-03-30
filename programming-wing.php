@@ -61,7 +61,7 @@ $qry = mysqli_query($connection, $sql);
                         <td><?php echo $row["position"]; ?></td>
 
 
-                        <td><a href="<?php echo $row['ID'] ?>">assign</a></td>
+                        <td><a href="asign.php?id=<?php echo $row['ID'] ?>">assign</a></td>
 
 
                     </tr>
