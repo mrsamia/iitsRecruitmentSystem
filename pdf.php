@@ -10,21 +10,14 @@
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 15px;
+        padding-left: 10px;
+        padding-right: 20px;
 
 
     }
 
 
-    .pic {
-
-        width: 150px;
-        height: 150px;
-        border: 3px solid black;
-        padding: 10px;
-        margin-left: auto;
-        margin-right: auto;
-
-    }
+   
 
 
 </style>
@@ -49,8 +42,6 @@ if (isset($_GET['id'])) {
 
 
 
-
-
 <?php include('header/admin-header.php'); ?>
 
 
@@ -61,22 +52,19 @@ if (isset($_GET['id'])) {
         <h1>
             <center>Executive Membership Form of IUBAT IT Society</center>
         </h1>
-
-        <div class="pic">
-
-        </div>
+        <img style="float: right; padding-right:20px;" height='150' width='150' src="<?php echo $row['imgdir'] ?>" alt='Profile Pic'><br><br><br>
         <b>Apply ID:</b>
         <input type="text" style="border-bottom: 1px  dotted;
       border-top: none;
       border-left: none;
-      border-right:none;" readonly="true" size="8" name="ID" value="<?php echo $row['ID'] ?>">
+      border-right:none;" readonly="true" size="25" name="ID" value="<?php echo $row['ID'] ?>">
 
 
         <b>Position applied for:</b>
         <input type="text" style="border-bottom: 1px  dotted;
       border-top: none;
       border-left: none;
-      border-right:none;" readonly="true" size="25" name="position" value="<?php echo $row['position'] ?>">
+      border-right:none;" readonly="true" size="28" name="position" value="<?php echo $row['position'] ?>"><br><br>
 
         <b>Applicant's Name:</b>
         <input type="text" style="border-bottom: 1px  dotted;
@@ -88,7 +76,7 @@ if (isset($_GET['id'])) {
         <input type="text" style="border-bottom: 1px  dotted;
       border-top: none;
       border-left: none;
-      border-right:none;" name="dept-id" readonly="true" value="<?php echo $row['dept-id'] ?>">
+      border-right:none;" name="dept-id" readonly="true" size="30"value="<?php echo $row['dept-id'] ?>"><br><br>
 
         <b>Program:</b>
         <input type="text" style="border-bottom: 1px  dotted;
@@ -101,7 +89,7 @@ if (isset($_GET['id'])) {
         <input type="text" style="border-bottom: 1px  dotted;
       border-top: none;
       border-left: none;
-      border-right:none;" readonly="true" name="wing" value="<?php echo $row['wing'] ?>">
+      border-right:none;" readonly="true" size="30" name="wing" value="<?php echo $row['wing'] ?>"><br><br>
 
 
         <b>Current CGPA:</b>
@@ -122,7 +110,7 @@ if (isset($_GET['id'])) {
         <input type="text" style="border-bottom: 1px  dotted;
       border-top: none;
       border-left: none;
-      border-right:none;" size="55"  name="Contact" readonly="true" value="<?php echo $row['E-mail'] ?>">
+      border-right:none;" size="45"  name="Contact" readonly="true" value="<?php echo $row['E-mail'] ?>"><br><br>
 
         <b>Facebook User Name:</b>
 
@@ -136,7 +124,7 @@ if (isset($_GET['id'])) {
         <input type="text" style="border-bottom: 1px  dotted;
       border-top: none;
       border-left: none;
-      border-right:none;" readonly="true" size="110" name="association" value="<?php echo $row['association'] ?>">
+      border-right:none;" readonly="true" size="110" name="association" value="<?php echo $row['association'] ?>"><br><br>
 
         <b>Past Experience:</b>
 
@@ -144,7 +132,7 @@ if (isset($_GET['id'])) {
       border-top: none;
       border-left: none;
       border-right:none;" readonly="true" rows="3" cols="120"
-                  name="Experience"><?php echo $row['Experience'] ?></textarea>
+                  name="Experience"><?php echo $row['Experience'] ?></textarea><br><br>
 
         <b>Reason for choosing this position:</b>
 
@@ -152,7 +140,7 @@ if (isset($_GET['id'])) {
       border-top: none;
       border-left: none;
       border-right:none;" rows="3" cols="120"readonly="true"
-                  name="choosing-position"><?php echo $row['choosing-position'] ?></textarea>
+                  name="choosing-position"><?php echo $row['choosing-position'] ?></textarea><br><br>
 
         <b>How would you serve IITS?</b>
 
@@ -165,7 +153,9 @@ if (isset($_GET['id'])) {
         <br>
 
 
-        <input style="margin-left: 390px;" class="btn btn-primary" type="submit" name="submit" value="select student">
+        <input style="margin-left: 320px;" class="btn btn-primary" type="submit" name="submit" value="select student">
+
+        <button style=" margin-left: 10px;" onclick="prnt()"  class="btn btn-primary">print PDF</button>
 
 
     </form>

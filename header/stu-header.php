@@ -8,8 +8,12 @@
  <!DOCTYPE html>
  <html>
  <head>
- 	<title></title>
+ 	<title>
+ 		
+ 	</title>
+ 	<link rel="stylesheet" href='css/bootstrap.css'>
  	<style>
+
  	ul {
  		list-style-type: none;
  		margin: 0;
@@ -51,6 +55,7 @@
           margin-top:20px;
         }
  </style>
+ 
 </head>
 
 <body>
@@ -59,8 +64,8 @@
 	<?php
 	include 'dbcon.php';
 	if(isset($_GET['msg'])){
-		echo "<center>".$_GET['msg']."</center>";
-	}
+    echo "<script>alert('".$_GET['msg']."')</script>";
+  }
 	?>
 	
 	<?php
@@ -74,17 +79,20 @@
 					<li><a href="stu-dash.php">Dashboard</a></li>
 					<li><a href="stu-notice.php">Notice</a></li>
 					<li><a href="work.php">Work</a></li>
-					<h4><a href="stu-logout.php" style="float: right; color:red;">logout<?php echo ' '.$_SESSION['deptid'];?></a></h4>
+					<li><a href="member.php">Members</a></li>
+					<li  style="float: right;"><a href="stu-logout.php" style="float: right; color:red;">logout<?php echo ' '.$_SESSION['deptid'];?></a></li>
 				</ul>
 	            <?php
-	        }else{
+	        }
+	        else
+	        {
 	        	?>
 	        	<ul>
 					<li><a href="stu-dash.php">Dashboard</a></li>
-					<li><a href="stu-notice.php">Notice</a></li>
-					<li><a href="view-result.php">View Result</a></li>
-					<li><a href="#stu-pay.php">Pay</a></li>
-					<h4><a href="stu-logout.php" style="float: right; color:red;">logout<?php echo ' '.$_SESSION['deptid'];?></a></h4>
+					
+					
+					
+					<li  style="float: right;"><a href="stu-logout.php" style="float: right; color:red;">logout<?php echo ' '.$_SESSION['deptid'];?></a></li>
 				</ul>
 	        	<?php
 	        }

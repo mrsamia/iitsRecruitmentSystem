@@ -15,7 +15,7 @@ include('sidebar.php');
 
 <div class="body">
 
-    <center><img src=" image/vrsty.jpg" width="100%" height="100%"></center>
+    <center><img src=" image/vrsty.jpg" width="100%" height="500px"></center>
 
 </div>
 </body>

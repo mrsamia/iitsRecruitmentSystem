@@ -91,6 +91,75 @@ li a:hover {
  .container{
       margin-top:20px;
        }
+
+
+
+
+
+
+
+
+
+.dropbtn2 {
+  background-color:  #333;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown2 {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown2 .dropbtn2 {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar2 a:hover, .dropdown1:hover .dropbtn2 {
+  background-color: black;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content2 a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content2 a:hover {
+  background-color: #ddd;
+}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+ .container{
+      margin-top:20px;
+       }
+
+
  
 
 
@@ -113,11 +182,36 @@ li a:hover {
 
 
    <li><a class="active" href="admin-dash.php">Dashboard</a></li>
-  <li><a class="active" href="admin-notice.php">Notice</a></li>
-  <li><a href="Applying-History.php">Applying History</a></li>
-  <li><a href="FinalList.php">Final List</a></li>
- 
   
+  <li><a href="Applying-History.php">Applying History</a></li>
+
+
+
+  <div class="dropdown2">
+    <button class="dropbtn2">Notice 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content2">
+        <a href="admin-notice.php">Member Notice</a>
+      <a href="public-notice.php">Public Notice</a>
+     
+      
+    </div>
+</div>
+
+ 
+<div class="dropdown2">
+    <button class="dropbtn2">Result 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content2">
+        <a href="Update.php">Update</a>
+      <a href="FinalList.php">Final List</a>
+     
+      
+    </div>
+</div>
+
 
 
 <div class="dropdown1">
@@ -128,8 +222,9 @@ li a:hover {
        <a href="society.php">IT Committee 2019-20</a>
       <a href="sports.php">Sports</a>
       <a href="cultural-wing.php">cultural</a>
+      <a href="Event-wing.php">Event</a>
       <a href="programming-wing.php">Programming</a>
-      <a href="#">Mentoring</a>
+      <a href="Robotics-wing.php">Robotics</a>
       <a href="Academic-wing.php">Academic</a>
       <a href="Finance-wing.php">Finance</a>
       <a href=Relational-wing.php>Relational</a>
@@ -139,6 +234,6 @@ li a:hover {
   </div> 
 
 
-   <li><a href="#Report">Report</a></li>
-   <h4><a href="admin-logout.php" style="float: right; color:red;">logout</a></h4>
+   
+   <li style="float: right;"><a href="admin-logout.php" style="float: right; color:red;">logout</a></li>
 </ul>

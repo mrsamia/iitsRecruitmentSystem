@@ -8,10 +8,15 @@
         <form action="" method="post">
             <label>Select Wing To Search: </label>
             <select class="form-control" name="search_val" required>
-                <option value="All">All</option>
+               <option value="All">All</option>
                 <option value="Sports">Sports</option>
                 <option value="Cultural">Cultural</option>
                 <option value="Academic">Academic</option>
+                <option value="Programming">Programming</option>
+                <option value="Mentoring">Mentoring</option>
+                <option value="Finance">Finance</option>
+                <option value="Relational">Relational</option>
+                <option value="Publication">Publication</option>
             </select>
 
             <input style="width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;" class='btn btn-primary'

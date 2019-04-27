@@ -8,13 +8,13 @@
 
         <div style="width: 300px; margin: 0 auto;" class="form-group">
             <label for="usr">Date:</label>
-            <input class="form-control" type="date" name="notice_date" required>
+            <input class="form-control" type="date" min="<?php echo date('Y-m-d')?>" name="notice_date" required>
         </div>
         <div style="width: 300px; margin: 0 auto;" class="form-group">
             <label for="usr">Notice Title:</label>
             <textarea class="form-control" type="text" rows="3" cols="60" name="title" required></textarea>
         </div>
-        <div style="width: 300px; margin: 0 auto;" class="form-group">
+        <div style="width: 500px; margin: 0 auto;" class="form-group">
             <label for="usr">Notice Box:</label>
             <textarea class="form-control" rows="10" cols="60" type="text" name="notice" required></textarea>
         </div>

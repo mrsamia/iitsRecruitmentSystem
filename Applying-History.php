@@ -11,6 +11,11 @@
                 <option value="Sports">Sports</option>
                 <option value="Cultural">Cultural</option>
                 <option value="Academic">Academic</option>
+                <option value="Programming">Programming</option>
+                <option value="Mentoring">Mentoring</option>
+                <option value="Finance">Finance</option>
+                <option value="Relational">Relational</option>
+                <option value="Publication">Publication</option>
             </select>
 
             <input style="width: 300px; margin: 0 auto; margin-top: 10px; margin-bottom: 10px;" class='btn btn-primary'
@@ -59,6 +64,7 @@ $qry = mysqli_query($connection, $sql);
 <body>
 
 <div class="container" id='getp'>
+    <form action="" method="post">
 
     <table class="table" align="center" width="50%">
         <thead>
@@ -69,6 +75,8 @@ $qry = mysqli_query($connection, $sql);
             <td><b>Position</b></td>
             <td><b>Wing</b></td>
             <td><b>Details</b></td>
+            <td class="hideforpdf"><b>Status</b></td>
+
         </tr>
         </thead>
         <tbody>
@@ -93,8 +101,27 @@ $qry = mysqli_query($connection, $sql);
                     <td><?php echo $row["wing"]; ?></td>
 
                     <td><a href="pdf.php?id=<?php echo $row['ID'] ?>">View Details</a></td>
+                    
+                    
+
+
+                    <td>
+                       <?php 
+                            if (is_null($row['selected'])) {
+                                ?>
+                                <form method="post" action="">
+                        <input style="display: none;" type="text" name="id" value="<?php echo $row['dept-id']?>">
+                        <input  class="btn btn-primary" type="submit" name="submit" value="select student">
+                    </form>
+                                <?php
+                            }else{
+                                echo "Selected";
+                            }
+                       ?>
+                    </td>
 
                 </tr>
+
 
                 <?php
             }
@@ -107,10 +134,11 @@ $qry = mysqli_query($connection, $sql);
 
         </tbody>
     </table>
+</form>
 
 </div>
 <div style="width: 100px; margin: 0 auto; margin-top:10px; ">
-    <button onclick="prnt()">print PDF</button>
+    <button onclick="prnt()" class="btn btn-primary">print PDF</button>
 </div>
 
 </body>
@@ -130,5 +158,27 @@ $qry = mysqli_query($connection, $sql);
 </script>
 </html>
 
+
+
+
+<?php
+
+include('dbcon.php');
+//insert code
+if (isset($_POST['submit'])) {
+    $id = $_POST['id'];
+
+    $sql = "UPDATE `applyform` SET `selected`='1' WHERE `dept-id` = '$id'";
+    $qry = mysqli_query($connection, $sql);
+    if ($qry) {
+        echo '<script> location.replace("Applying-History.php"); </script>';
+    } else {
+
+       echo "<script>alert(' Not Selected')</script>";
+    }
+
+}
+
+?>
 
 

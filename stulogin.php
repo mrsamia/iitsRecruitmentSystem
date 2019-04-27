@@ -70,6 +70,8 @@ if (isset($_POST['submit'])) {
         $_SESSION['uid'] = $id;
         $_SESSION['deptid'] = $data['dept-id'];
         $_SESSION['name'] = $data['name'];
+        $_SESSION['wing'] = $data['wing'];
+
         echo '<script> location.replace("stu-dash.php"); </script>';
     }
 

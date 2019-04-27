@@ -6,7 +6,7 @@ include('header/stu-header.php'); ?>
 <?php
 include('dbcon.php');
 //view code
-$sql = "SELECT * FROM notice order by notice_date desc";
+$sql = "SELECT * FROM notice where public=0 order by notice_date desc";
 $qry = mysqli_query($connection, $sql);
 
 if (mysqli_num_rows($qry) > 0) {

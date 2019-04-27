@@ -102,11 +102,11 @@
 
 <ul>
     <li><a class="active" href="index.php">Home</a></li>
-
-    <li><a href="#Notice.php">Notice</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="apply-form.php">Apply</a></li>
+    <li><a href="public-notice-display.php">Notice</a></li>
+    
+  
+    
     <div class="dropdown1">
         <button class="dropbtn1">login
             <i class="fa fa-caret-down"></i>
@@ -117,3 +117,9 @@
             <a href="stulogin.php">Student</a>
         </div>
 </ul>
+<?php
+    include 'dbcon.php';
+    if(isset($_GET['msg'])){
+    echo "<script>alert('".$_GET['msg']."')</script>";
+  }
+    ?>

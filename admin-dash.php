@@ -15,7 +15,7 @@ if (isset($_SESSION['uid'])) {
 
 <div class="body">
 
-    <img src=" image/vrsty.jpg" height="290px" width="1226px">
+    <img src=" image/vrsty.jpg" height="290px" width="1366px">
 
 </div>
 <marquee>

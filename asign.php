@@ -13,6 +13,7 @@ if (mysqli_num_rows($qry) > 0) {
 
 include('header/admin-header.php');
 ?>
+
 <!-- <input type="text" class="form-control" name="id" placeholder="Enter University ID *" required> -->
 <div style="width: 600px; margin: 0 auto; padding: 30px; margin-top: 30px">
 	<form action="" method="GET">
@@ -54,7 +55,7 @@ include('header/admin-header.php');
 					Date:
 				</td>
 				<td>
-					<input type="date" class="form-control" name="date" placeholder="Enter University ID *" required>
+					<input type="date" class="form-control" name="date" required>
 				</td>
 			</tr>
 			<tr>
@@ -97,7 +98,7 @@ if(isset($_GET['submit'])){
 	$sql = "INSERT INTO `work`(`name`, `details`, `date`, `stuid`) VALUES ('$name', '$details', '$date', '$stuid')";
 	$qry = mysqli_query($connection, $sql);
 	
-	echo $redir;
+	
 	if($qry){
 		switch ($wing) {
 			case 'Academic':
